@@ -1,7 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  describe "GET /new " do
+
+  expected_post = [
+    Post.new(
+    id: '1',
+    message: 'Hello!',
+    created_at: "#{Time.now}",
+    )
+  ]
+describe "GET /new " do
     it "responds with 200" do
       get :new
       expect(response).to have_http_status(200)
@@ -18,6 +26,12 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
+
+    it "creates a post" do
+      post :create, params: { post: { message: "Hello!" } }
+      puts expected_post[0].created_at
+     expect(Post.find_by(message: "Hello!").created_at.strftime("%m/%d/%Y %H:%M")).to eq(expected_post[0].created_at.strftime("%m/%d/%Y %H:%M"))
+     end
   end
 
   describe "GET /" do
@@ -26,4 +40,6 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+
 end
