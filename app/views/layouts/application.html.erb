@@ -9,6 +9,21 @@
   </head>
 
   <body>
+    <% if !user_signed_in? %>
+      <p class="sign_in"><%= link_to "Login", new_user_session_path %></p>
+    <% end %>
+    <% if user_signed_in? %>
+      <div class="buttons">
+        <button class="button>"><%= link_to "New Post", new_post_path %></button>
+        <button class="button"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </button>
+      </div> 
+      <% end %>
+    <% link_to "Home", 'posts#index' %>     
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
+    
   </body>
 </html>
