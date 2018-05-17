@@ -3,12 +3,44 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+  <!--level on each page with variables showing login/sign up (different menus). Bold and no link for page currently on-->
+    <div id='mainnav'>
+    <section class="section">
+    <nav class="level">
+    <div class="level-left">
+    <% case @page 
+      when 'Home'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-user'></i></span>Profile</div>".html_safe, edit_user_registration_url %>
+      <% when 'Profile'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-home'></i></span>Home</div>".html_safe, root_path %>
+    <%end%>
+    <% if @page %>
+    <h1 class="title maintitle"><%=@page%></h1>
+    <%else%>
+    <h1 class="title maintitle">Acebook</h1>
+    <%end%>
+    </div>
+    <div class="level-right">
+    <% case @page 
+      when 'Sign Up'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-openid'></i></span>Sign In</div>".html_safe, edit_user_registration_url %>
+      <% when 'Sign In'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-user'></i></span>Sign Up</div>".html_safe, edit_user_registration_url %>
+      <% when 'Home'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-sign-out'></i></span>Sign Out</div>".html_safe, destroy_user_session_url, method: :delete %>
+      <% when 'Profile'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-sign-out'></i></span>Sign Out</div>".html_safe, destroy_user_session_url, method: :delete %>
+    <%end%>  
+    </div>
+    </nav>
+    </section>
+    </div>
+    <section class="section">
+    <div class="columns">
+      <div class="container">
+        <%= yield %>
+      </div>
+      </div>
+    </section>
   </body>
 </html>

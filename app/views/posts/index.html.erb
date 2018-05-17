@@ -1,6 +1,8 @@
+<% @page = 'Home' %>
 Edit <%= link_to current_user.email, edit_user_registration_url%>'s profile
+<br><br>
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %> <br> <%= time_ago_in_words(post.created_at) + ' ago'%></p> 
+  <p><%= post.message %> <br> <%= time_ago_in_words(post.created_at) + ' ago'%></p><br/>
 <% end %>
 
 <%= link_to new_post_path do %>
