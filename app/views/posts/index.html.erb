@@ -4,7 +4,7 @@ Edit <%= link_to current_user.name, edit_user_registration_url%>'s profile
   <br><br><p class='post'><%= post.message%></p><span class='time'><%= time_ago_in_words(post.created_at) + ' ago'%></span>
 <% end %>
 <br><br>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= link_to "<button class='button'>Post a message<i class='fa fa-comment comment'></i></button>".html_safe, new_post_path %>
+
+
 
