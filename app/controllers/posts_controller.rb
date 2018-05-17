@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
-    puts current_user
+
+    @title = 'New Post'
+
     @post = Post.new
   end
 
