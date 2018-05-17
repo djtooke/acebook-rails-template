@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,12 +13,12 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= 'Password saved' %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class='formItem'><%= user.name%></td>
+        <td class='formItem'><%= user.email %></td>
+        <td class='formItem'><%= 'Password saved' %></td>
+        <td><%= link_to '<span class="icon"><i class="fa fa-eye"></i></span>'.html_safe, user %></td>
+        <td><%= link_to '<span class="icon"><i class="fa fa-edit"></i></span>'.html_safe, edit_user_path(user)%></td>
+        <td><%= link_to '<span class="icon"><i class="fa fa-trash"></i></span>'.html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to '<button type="button" class="button">New User</button>'.html_safe, new_user_path %>

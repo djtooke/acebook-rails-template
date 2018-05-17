@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @title = "Users"
     @users = User.all
   end
 
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @title = "New User"
     @user = User.new
   end
 

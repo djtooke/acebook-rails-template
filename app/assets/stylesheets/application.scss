@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ @import "bulma";
+ a:hover{
+  background-color:white;
+ }
+ body{
+   font-size: 20px;
+ }
+
+ .formItem{
+   font-size: 20px;
+ }
