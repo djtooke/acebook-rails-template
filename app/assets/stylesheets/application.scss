@@ -14,6 +14,9 @@
  *= require_self
  */
  @import "bulma";
+ body{
+   background-color: #d2bebc;
+ }
 #mainnav{
   position: relative;
   top:-30px;
@@ -39,4 +42,9 @@
 
 .boxes{
   width:50%;    
+}
+
+.main{
+  background-color:#CDB7B5;
+  padding:5%;
 }
