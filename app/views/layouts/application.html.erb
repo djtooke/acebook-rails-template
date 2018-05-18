@@ -27,8 +27,8 @@
     <div class="level-right">
     <% case @page 
       when 'Sign Up'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-openid'></i></span>Sign In</div>".html_safe, edit_user_registration_url %>
-      <% when 'Sign In'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-user'></i></span>Sign Up</div>".html_safe, edit_user_registration_url %>
-      <% when 'Home'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-sign-out'></i></span>Sign Out</div>".html_safe, destroy_user_session_url, method: :delete %>
+      <% when 'Sign In'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-user'></i></span>Sign Up</div>".html_safe, new_user_registration_url %>
+      <% when 'Home'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-sign-out'></i></span>Sign Out</div>".html_safe, destroy_user_session_url, method: :delete, :id => "signout" %>
       <% when 'Profile'%><%= link_to "<div class='menuItem'><span class='icon'><i class='fa fa-sign-out'></i></span>Sign Out</div>".html_safe, destroy_user_session_url, method: :delete %>
     <%end%>  
     </div>

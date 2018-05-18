@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= f.label :password, :class => 'label' %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off", :class => 'input boxes' %>
+    <%= f.password_field :password, autocomplete: "off", :class => 'input boxes', :id => "pass1" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -26,7 +26,7 @@
 
   <div class="field">
     <%= f.label :password_confirmation, :class => 'label' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" , :class => 'input boxes'%>
+    <%= f.password_field :password_confirmation, autocomplete: "off" , :class => 'input boxes', :id => "pass2"%>
   </div>
 
   <div class="field">
