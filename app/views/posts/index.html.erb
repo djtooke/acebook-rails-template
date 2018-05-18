@@ -1,12 +1,10 @@
 <% @page = 'Home' %>
-Edit <%= link_to current_user.email, edit_user_registration_url%>'s profile
-<br><br>
+Edit <%= link_to current_user.name, edit_user_registration_url%>'s profile
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %> <br> <%= time_ago_in_words(post.created_at) + ' ago'%></p><br/>
+  <br><br><p class='post'><%= post.message%></p><span class='time'><%= time_ago_in_words(post.created_at) + ' ago'%></span>
 <% end %>
+<br><br>
+<%= link_to "<button class='button'>Post a message<i class='fa fa-comment comment'></i></button>".html_safe, new_post_path, :id => "postmessage" %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-<br>
-<%= link_to "Sign out", destroy_user_session_url, method: :delete %>
+
+

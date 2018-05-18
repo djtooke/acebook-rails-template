@@ -2,7 +2,10 @@
 <div class="column is-two-fifths">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
+  <div class="field">
+    <%= f.label :name, :class => 'label' %><br />
+    <%= f.text_field :name,:class => 'input boxes'%>
+  </div>
   <div class="field">
     <%= f.label :email, :class => 'label' %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email",:class => 'input boxes' %>
@@ -14,7 +17,7 @@
 
   <div class="field">
     <%= f.label :password, :class => 'label' %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off", :class => 'input boxes' %>
+    <%= f.password_field :password, autocomplete: "off", :class => 'input boxes', :id => "pass1" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -23,7 +26,7 @@
 
   <div class="field">
     <%= f.label :password_confirmation, :class => 'label' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" , :class => 'input boxes'%>
+    <%= f.password_field :password_confirmation, autocomplete: "off" , :class => 'input boxes', :id => "pass2"%>
   </div>
 
   <div class="field">

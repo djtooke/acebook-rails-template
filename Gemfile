@@ -16,8 +16,6 @@ gem 'devise'
 gem "bulma-rails", "~> 0.7.1"
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -49,6 +47,8 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
   gem 'simplecov', require: false
 end
 
