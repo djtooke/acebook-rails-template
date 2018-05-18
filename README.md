@@ -1,5 +1,7 @@
 # AceBook
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fe55adfdfa644a5d99cd517eef8bc9a5)](https://app.codacy.com/app/VytisVA/acebook-byte-4?utm_source=github.com&utm_medium=referral&utm_content=djtooke/acebook-byte-4&utm_campaign=badger)
+
 Fork this repository to `acebook-teamname` and customize
 the below**
 
